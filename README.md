@@ -1,2 +1,0 @@
-# photostoresite
-photo store site
