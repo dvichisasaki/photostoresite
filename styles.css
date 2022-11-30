@@ -110,6 +110,9 @@ html,body {
 .footer-nav a {
     width: 10%;
 }
+.shop-items {
+    margin-top: 160px;
+}
 
 .shop-item {
     border-bottom: 1px solid black;
