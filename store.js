@@ -16,7 +16,7 @@ function addToCartClicked(event) {
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // 同じ商品がカートにあるか確認
+   
     const existingItem = cart.find(item => item.title === title && item.price === price);
     if (existingItem) {
         existingItem.quantity++;
