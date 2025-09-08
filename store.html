@@ -8,40 +8,42 @@
 <script src="store.js" defer></script>
 </head>
 <body>
-
 <header class="main-header">
+    <h1 class="header-title">MATTHEW TERRA</h1>
     <nav class="nav main-nav">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="store.html">Store</a></li>
-            <li><a href="about.html">About</a></li>
             <li><a href="cart.html">Cart</a></li>
         </ul>
     </nav>
-    <h1 class="header-title">MATTHEW TERRA</h1>
 </header>
 
-<section class="container content-section">
+<section class="content-section container">
+    <h2>Store</h2>
     <div class="shop-items">
 
+        <!-- 写真1 -->
         <div class="shop-item">
-            <img class="shop-item-image" src="photo1.jpg" alt="">
+            <img class="shop-item-image" src="03480B27-872D-4ABD-9F2A-53D537FB5E24_1_105_c.jpeg" alt="Photo1">
             <span class="shop-item-title">Photo 1</span>
-            <span class="shop-item-price">$50</span>
+            <select class="shop-item-size">
+                <option value="50">Small - $50</option>
+                <option value="100">Medium - $100</option>
+                <option value="150">Large - $150</option>
+            </select>
             <button class="btn btn-primary shop-item-button">Add to Cart</button>
         </div>
 
+        <!-- 写真2 -->
         <div class="shop-item">
-            <img class="shop-item-image" src="photo2.jpg" alt="">
+            <img class="shop-item-image" src="B2BD3758-613C-40E5-9F3B-F33110D56B75_1_105_c.jpeg" alt="Photo2">
             <span class="shop-item-title">Photo 2</span>
-            <span class="shop-item-price">$80</span>
-            <button class="btn btn-primary shop-item-button">Add to Cart</button>
-        </div>
-
-        <div class="shop-item">
-            <img class="shop-item-image" src="photo3.jpg" alt="">
-            <span class="shop-item-title">Photo 3</span>
-            <span class="shop-item-price">$60</span>
+            <select class="shop-item-size">
+                <option value="50">Small - $50</option>
+                <option value="100">Medium - $100</option>
+                <option value="150">Large - $150</option>
+            </select>
             <button class="btn btn-primary shop-item-button">Add to Cart</button>
         </div>
 
@@ -49,18 +51,14 @@
 </section>
 
 <footer class="main-footer">
-    <div class="container main-footer-container">
-        <nav class="nav footer-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="cart.html">Cart</a></li>
-            </ul>
-        </nav>
-        <h2 class="footer-title">MATTHEW TERRA</h2>
-    </div>
+    <nav class="footer-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+    <h2 class="footer-title">MATTHEW TERRA</h2>
 </footer>
-
 </body>
 </html>
