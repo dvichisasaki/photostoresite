@@ -69,49 +69,40 @@ html, body {
     margin: 30px 0;
 }
 
-/* ストアページ */
+
+/* ストアページ全体の余白をリセット */
 .shop-items {
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
-    margin-top: 100px;
+    gap: 0;        /* 写真間の余白をなくす */
+    margin: 0;     /* 上の余白をなくす */
+    padding: 0;    /* 内側余白も削除 */
 }
 
-
+/* 個々の写真コンテナの余白を削除 */
 .shop-item {
-    border: none;       /* 枠線を削除 */
-    background: none;   /* 背景を透明に */
-    padding: 0;         /* 内側の余白を削除 */
-    margin: 0;          /* 外側の余白を必要に応じて調整 */
-    text-align: center; /* 写真とテキストを中央揃え */
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    box-shadow: none; /* 念のため影も削除 */
 }
 
-
+/* 写真自体 */
 .shop-item-image {
-    width: 100%;      /* ページ幅に合わせる場合 */
-    height: auto;     /* アスペクト比を維持 */
+    width: 100%;
+    height: auto;
     display: block;
-    margin: 0 auto;   /* 中央配置 */
+    margin: 0;
 }
 
-
+/* タイトルやボタンも余白最小 */
 .shop-item-title,
 .shop-item-size,
 .shop-item-button {
-    display: block;
-    margin: 5px 0; /* タイトルとボタンの間に少し余白 */
+    margin: 2px 0;
 }
-
-
-.shop-item select {
-    margin-bottom: 10px;
-}
-
-.shop-item-button {
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
 /* カートページ */
 .cart-items {
     margin-top: 120px;
