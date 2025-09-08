@@ -1,88 +1,88 @@
 if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ready)
+    document.addEventListener('DOMContentLoaded', ready);
 } else {
-    ready()
+    ready();
 }
 
 function ready() {
-    // Remove buttons
-    var removeCartItemButtons = document.getElementsByClassName('btn-danger')
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
-        var button = removeCartItemButtons[i]
-        button.addEventListener('click', removeCartItem)
+    // カート内のアイテム削除ボタン
+    const removeCartItemButtons = document.getElementsByClassName('btn-danger');
+    for (let button of removeCartItemButtons) {
+        button.addEventListener('click', removeCartItem);
     }
 
-    // Quantity inputs
-    var quantityInputs = document.getElementsByClassName('cart-quantity-input')
-    for (var i = 0; i < quantityInputs.length; i++) {
-        var input = quantityInputs[i]
-        input.addEventListener('change', quantityChanged)
+    // 数量変更イベント
+    const quantityInputs = document.getElementsByClassName('cart-quantity-input');
+    for (let input of quantityInputs) {
+        input.addEventListener('change', quantityChanged);
     }
 
-    // Add to cart buttons
-    var addToCartButtons = document.getElementsByClassName('shop-item-button')
-    for (var i = 0; i < addToCartButtons.length; i++) {
-        var button = addToCartButtons[i]
-        button.addEventListener('click', addToCartClicked)
+    // 商品追加ボタン
+    const addToCartButtons = document.getElementsByClassName('shop-item-button');
+    for (let button of addToCartButtons) {
+        button.addEventListener('click', addToCartClicked);
     }
 
-    // Checkout button
-    document.getElementsByClassName('btn-checkout')[0].addEventListener('click', purchaseClicked)
+    // チェックアウトボタン
+    document.getElementsByClassName('btn-checkout')[0]?.addEventListener('click', purchaseClicked);
 }
 
-// Purchase
+// チェックアウト処理
 function purchaseClicked() {
-    alert('Thank you for your purchase')
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
+    alert('Thank you for your purchase!');
+    const cartItems = document.getElementsByClassName('cart-items')[0];
+    while (cartItems?.hasChildNodes()) {
+        cartItems.removeChild(cartItems.firstChild);
     }
-    updateCartTotal()
+    updateCartTotal();
 }
 
-// Remove item
+// カート内アイテム削除
 function removeCartItem(event) {
-    var buttonClicked = event.target
-    buttonClicked.parentElement.parentElement.remove()
-    updateCartTotal()
+    const buttonClicked = event.target;
+    buttonClicked.parentElement.parentElement.remove();
+    updateCartTotal();
 }
 
-// Quantity change
+// 数量変更処理
 function quantityChanged(event) {
-    var input = event.target
+    const input = event.target;
     if (isNaN(input.value) || input.value <= 0) {
-        input.value = 1
+        input.value = 1;
     }
-    updateCartTotal()
+    updateCartTotal();
 }
 
-// Add to cart
+// 商品追加
 function addToCartClicked(event) {
-    var button = event.target
-    var shopItem = button.parentElement.parentElement
-    var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
-    var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
-    addItemToCart(title, price, imageSrc)
-    updateCartTotal()
+    const button = event.target;
+    const shopItem = button.closest('.shop-item');
+    const title = shopItem.getElementsByClassName('shop-item-title')[0]?.innerText || "Item";
+    const price = shopItem.getElementsByClassName('shop-item-price')[0].innerText;
+    const imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src;
+
+    addItemToCart(title, price, imageSrc);
+    updateCartTotal();
 }
 
+// カートにアイテムを追加
 function addItemToCart(title, price, imageSrc) {
-    var cartRow = document.createElement('div')
-    cartRow.classList.add('cart-row')
-    var cartItems = document.getElementsByClassName('cart-items')[0]
-    var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+    const cartItemContainer = document.getElementsByClassName('cart-items')[0];
+    const cartItemNames = cartItemContainer.getElementsByClassName('cart-item-title');
 
-    for (var i = 0; i < cartItemNames.length; i++) {
+    for (let i = 0; i < cartItemNames.length; i++) {
         if (cartItemNames[i].innerText === title) {
-            alert('This item is already added to the cart')
-            return
+            alert('This item is already added to the cart');
+            return;
         }
     }
 
-    var cartRowContents = `
+    const cartRow = document.createElement('div');
+    cartRow.classList.add('cart-row');
+
+    const cartRowContents = `
         <div class="cart-item cart-column">
-            <img class="cart-item-image" src="${imageSrc}" width="180" height="280">
+            <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
             <span class="cart-item-title">${title}</span>
         </div>
         <span class="cart-price cart-column">${price}</span>
@@ -90,26 +90,29 @@ function addItemToCart(title, price, imageSrc) {
             <input class="cart-quantity-input" type="number" value="1">
             <button class="btn btn-danger" type="button">Remove</button>
         </div>
-    `
-    cartRow.innerHTML = cartRowContents
-    cartItems.append(cartRow)
+    `;
 
-    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
-    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+    cartRow.innerHTML = cartRowContents;
+    cartItemContainer.append(cartRow);
+
+    // 新しい要素にイベントを追加
+    cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem);
+    cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged);
 }
 
-// Update total
+// カート合計計算
 function updateCartTotal() {
-    var cartItemContainer = document.getElementsByClassName('cart-items')[0]
-    var cartRows = cartItemContainer.getElementsByClassName('cart-row')
-    var total = 0
-    for (var i = 0; i < cartRows.length; i++) {
-        var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cart-price')[0]
-        var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
-        var price = parseFloat(priceElement.innerText.replace('$', ''))
-        var quantity = quantityElement.value
-        total += price * quantity
+    const cartItemContainer = document.getElementsByClassName('cart-items')[0];
+    const cartRows = cartItemContainer.getElementsByClassName('cart-row');
+    let total = 0;
+
+    for (let cartRow of cartRows) {
+        const priceElement = cartRow.getElementsByClassName('cart-price')[0];
+        const quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0];
+        const price = parseFloat(priceElement.innerText.replace('$', ''));
+        const quantity = quantityElement.value;
+        total += price * quantity;
     }
-    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total.toFixed(2)
+
+    document.getElementsByClassName('cart-total-price')[0].innerText = '$' + total.toFixed(2);
 }
