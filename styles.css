@@ -77,25 +77,31 @@ html, body {
     margin-top: 100px;
 }
 
+
 .shop-item {
-    border: 1px solid #ccc;
-    padding: 10px;
-    flex: 1 1 calc(33% - 2em);
-    box-sizing: border-box;
-    text-align: center;
-    background-color: white;
+    border: none;       /* 枠線を削除 */
+    background: none;   /* 背景を透明に */
+    padding: 0;         /* 内側の余白を削除 */
+    margin: 0;          /* 外側の余白を必要に応じて調整 */
+    text-align: center; /* 写真とテキストを中央揃え */
 }
 
-.shop-item img {
-    width: 100%;
-    height: auto;
-}
 
-.shop-item-title {
+.shop-item-image {
+    width: 100%;      /* ページ幅に合わせる場合 */
+    height: auto;     /* アスペクト比を維持 */
     display: block;
-    margin: 10px 0;
-    font-weight: bold;
+    margin: 0 auto;   /* 中央配置 */
 }
+
+
+.shop-item-title,
+.shop-item-size,
+.shop-item-button {
+    display: block;
+    margin: 5px 0; /* タイトルとボタンの間に少し余白 */
+}
+
 
 .shop-item select {
     margin-bottom: 10px;
