@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // すべてのAdd to Cartボタンにイベントを追加
     const addButtons = document.getElementsByClassName('shop-item-button');
     for (let btn of addButtons) {
         btn.addEventListener('click', addToCartClicked);
     }
 });
 
+// カートに商品を追加
 function addToCartClicked(event) {
     const button = event.target;
     const shopItem = button.parentElement;
@@ -16,13 +16,14 @@ function addToCartClicked(event) {
 
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // 同じ商品とサイズがある場合は追加しない
-    if (cart.some(item => item.title === title && item.price === price)) {
-        alert('This item is already in the cart');
-        return;
+    // 同じ商品がカートにあるか確認
+    const existingItem = cart.find(item => item.title === title && item.price === price);
+    if (existingItem) {
+        existingItem.quantity++;
+    } else {
+        cart.push({ title, price, imageSrc, quantity: 1 });
     }
 
-    cart.push({ title, price, imageSrc, quantity: 1 });
     localStorage.setItem('cart', JSON.stringify(cart));
     alert('Item added to cart!');
 }
