@@ -70,26 +70,24 @@ html, body {
 }
 
 
-/* ストアページ全体の余白をリセット */
+/* ストアページ */
 .shop-items {
     display: flex;
     flex-wrap: wrap;
     gap: 0;        /* 写真間の余白をなくす */
-    margin: 0;     /* 上の余白をなくす */
+    margin: 0;     /* 上の余白を削除 */
     padding: 0;    /* 内側余白も削除 */
 }
 
-/* 個々の写真コンテナの余白を削除 */
 .shop-item {
     border: none;
     background: none;
     padding: 0;
     margin: 0;
     text-align: center;
-    box-shadow: none; /* 念のため影も削除 */
+    box-shadow: none; /* 枠っぽく見える影を削除 */
 }
 
-/* 写真自体 */
 .shop-item-image {
     width: 100%;
     height: auto;
@@ -97,12 +95,21 @@ html, body {
     margin: 0;
 }
 
-/* タイトルやボタンも余白最小 */
 .shop-item-title,
 .shop-item-size,
 .shop-item-button {
     margin: 2px 0;
 }
+
+.shop-item-button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.shop-item select {
+    margin-bottom: 10px;
+}
+
 /* カートページ */
 .cart-items {
     margin-top: 120px;
