@@ -144,7 +144,19 @@ a {
 @media (max-width: 768px) {
     .shop-item {
         width: 100%;
-    }
+    
+
+
+  .main-header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 
     .nav ul {
         flex-direction: column;
