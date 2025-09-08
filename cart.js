@@ -47,7 +47,7 @@ function loadCart() {
         cartRow.classList.add('cart-row')
         cartRow.innerHTML = `
             <div class="cart-item cart-column">
-                <img class="cart-item-image" src="${item.imageSrc}" width="100" height="100">
+                <img class="cart-item-image" src="${item.imageSrc}">
                 <span class="cart-item-title">${item.title}</span>
             </div>
             <div class="cart-quantity cart-column">
