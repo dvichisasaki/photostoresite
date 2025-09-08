@@ -100,4 +100,5 @@ function updateCartTotal() {
         total += price * quantity
     }
     const totalPriceElement = document.getElementsByClassName('cart-total-price')[0]
-
+    if (totalPriceElement) totalPriceElement.innerText = '$' + total
+}
