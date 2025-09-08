@@ -1,4 +1,6 @@
-/* 共通スタイル */
+/* ================================
+   全体設定
+=================================*/
 html, body {
     background-color: rgb(255, 248, 240);
     color: black;
@@ -8,23 +10,25 @@ html, body {
     letter-spacing: 0.08em;
 }
 
-/* ヘッダー */
+/* ================================
+   ヘッダー
+=================================*/
 .main-header {
     position: fixed;
+    z-index: 10;
     top: 0;
     left: 0;
     width: 100%;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: rgb(255, 248, 240);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    z-index: 10;
+    background: rgba(255,248,240,0.95);
+    padding: 0.5em 2em;
 }
 
 .header-title {
-    font-size: 1.5em;
+    font-size: 1.2em;
     font-weight: normal;
 }
 
@@ -33,150 +37,99 @@ html, body {
     margin: 0;
     padding: 0;
     display: flex;
-    gap: 15px;
+    gap: 1em;
 }
 
 .nav a {
     text-decoration: none;
     color: black;
-    font-weight: bold;
+    font-size: 0.9em;
 }
 
-.nav a:hover {
-    color: gray;
-}
-
-/* タイトル画像 */
+/* ================================
+   タイトル画像
+=================================*/
 .title-image {
-    height: 400px;
+    height: 560px;
     background-image: url("IMG_0997_Original.JPG");
     background-size: cover;
     background-position: center;
     width: 100%;
-    margin-top: 70px; /* ヘッダー分 */
+    margin-top: 60px; /* ヘッダー分の余白 */
 }
 
-/* コンテナ */
+/* ================================
+   コンテンツ共通
+=================================*/
+.content-section {
+    margin: 1em;
+}
+
 .container {
     max-width: 960px;
     margin: 0 auto;
-    padding: 1em;
+    padding: 0 1.5em;
 }
 
-/* ホーム画像 */
-.home-image {
-    width: 100%;
-    margin: 30px 0;
-}
-
-
-/* ストアページ */
-.shop-items {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0;        /* 写真間の余白をなくす */
-    margin: 0;     /* 上の余白を削除 */
-    padding: 0;    /* 内側余白も削除 */
-}
-
-.shop-item {
-    border: none;
-    background: none;
-    padding: 0;
-    margin: 0;
+/* ================================
+   Aboutセクション
+=================================*/
+.section-about-title {
     text-align: center;
-    box-shadow: none; /* 枠っぽく見える影を削除 */
+    border-bottom: 1px solid black;
+    margin: 80px auto 40px auto;
+    padding-bottom: 20px;
+    font-weight: normal;
 }
 
-.shop-item-image {
-    width: 100%;
-    height: auto;
+.about-image1, .about-image2 {
     display: block;
-    margin: 0;
+    margin: 40px auto;
+    max-width: 100%;
+    height: auto;
 }
 
-.shop-item-title,
-.shop-item-size,
-.shop-item-button {
-    margin: 2px 0;
+.about p {
+    display: block;
+    width: 70%;
+    margin: 1em auto;
 }
 
-.shop-item-button {
+/* ================================
+   ボタン
+=================================*/
+.btn, .btn-primary, .btn-about, .btn-cart, .btn-checkout {
+    background-color: rgb(255, 248, 240);
+    border: 0.1em solid black;
     padding: 5px 10px;
     cursor: pointer;
-}
-
-.shop-item select {
-    margin-bottom: 10px;
-}
-
-/* カートページ */
-.cart-items {
-    margin-top: 120px;
-}
-
-.cart-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    width: 50%;
-}
-
-.cart-item img {
-    width: 100px;
-    height: 100px;
-}
-
-.cart-column {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.cart-quantity input {
-    width: 50px;
-    padding: 5px;
-}
-
-.btn-danger {
-    background-color: #ff4c4c;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-}
-
-.btn-danger:hover {
-    background-color: #ff1f1f;
-}
-
-.cart-total {
-    text-align: right;
-    font-size: 1.2em;
-    margin-top: 20px;
-}
-
-.btn-checkout {
-    padding: 10px 20px;
-    margin-top: 10px;
-    cursor: pointer;
-}
-
-/* フッター */
-.main-footer {
-    margin-top: 50px;
-    padding: 20px;
-    border-top: 1px solid black;
+    font-size: 0.9em;
     text-align: center;
+}
+
+.btn-about {
+    margin: 140px auto;
+    display: block;
+}
+
+.btn-cart:hover, .btn-checkout:hover {
+    background-color: white;
+    color: rgb(130, 119, 119);
+}
+
+/* ================================
+   フッター
+=================================*/
+.main-footer {
+    padding: 1em 0;
+    border-top: 1px solid black;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.footer-title {
+    font-weight: normal;
+    margin-top: 1em;
 }
 
 .footer-nav ul {
@@ -184,10 +137,97 @@ html, body {
     padding: 0;
     display: flex;
     justify-content: center;
-    gap: 15px;
+    gap: 1em;
 }
 
 .footer-nav a {
     text-decoration: none;
     color: black;
+}
+
+/* ================================
+   Storeページ
+=================================*/
+.shop-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 100px;
+}
+
+.shop-item {
+    border: none;       /* 枠線を削除 */
+    background: none;   /* 背景を透明に */
+    padding: 0;
+    margin: 0;
+    text-align: center; /* 写真とテキストを中央揃え */
+}
+
+.shop-item-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.shop-item-title,
+.shop-item-size,
+.shop-item-button {
+    display: block;
+    margin: 5px 0;
+}
+
+.shop-item select {
+    margin-bottom: 10px;
+}
+
+/* ================================
+   Cartページ
+=================================*/
+.cart-items {
+    margin-top: 100px;
+}
+
+.cart-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.cart-titles {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.cart-item {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: auto;
+}
+
+.cart-price {
+    width: 20%;
+}
+
+.cart-quantity {
+    width: 35%;
+}
+
+.cart-quantity-input {
+    width: 50px;
+    text-align: center;
+}
+
+.cart-total {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 1.2em;
 }
