@@ -1,17 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Store - Matthew Terra</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="store.js" async></script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Store - Matthew Terra</title>
+<link rel="stylesheet" href="styles.css">
+<script src="store.js" defer></script>
 </head>
 <body>
-    <header class="main-header">
-        <h1 class="header-title">MATTHEW TERRA</h1>
-        <nav class="nav main-nav">
+
+<header class="main-header">
+    <nav class="nav main-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="store.html">Store</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+    <h1 class="header-title">MATTHEW TERRA</h1>
+</header>
+
+<section class="container content-section">
+    <div class="shop-items">
+
+        <div class="shop-item">
+            <img class="shop-item-image" src="photo1.jpg" alt="">
+            <span class="shop-item-title">Photo 1</span>
+            <span class="shop-item-price">$50</span>
+            <button class="btn btn-primary shop-item-button">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img class="shop-item-image" src="photo2.jpg" alt="">
+            <span class="shop-item-title">Photo 2</span>
+            <span class="shop-item-price">$80</span>
+            <button class="btn btn-primary shop-item-button">Add to Cart</button>
+        </div>
+
+        <div class="shop-item">
+            <img class="shop-item-image" src="photo3.jpg" alt="">
+            <span class="shop-item-title">Photo 3</span>
+            <span class="shop-item-price">$60</span>
+            <button class="btn btn-primary shop-item-button">Add to Cart</button>
+        </div>
+
+    </div>
+</section>
+
+<footer class="main-footer">
+    <div class="container main-footer-container">
+        <nav class="nav footer-nav">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="store.html">Store</a></li>
@@ -19,54 +58,9 @@
                 <li><a href="cart.html">Cart</a></li>
             </ul>
         </nav>
-    </header>
-
-    <section class="content-section container">
-        <div class="shop-items">
-            <div class="shop-item">
-                <img class="shop-item-image" src="43C0306D-2E77-48B7-A6A1-C7F72A844B6E_1_105_c.jpeg" alt="Photo Print">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$100</span>
-                    <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <img class="shop-item-image" src="4A370185-6D73-4ADE-BFFF-15B081B178AA_1_105_c.jpeg" alt="Photo Print">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$120</span>
-                    <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <img class="shop-item-image" src="8E3340E1-C8B0-424F-942A-565DCF6ABE2E_1_105_c.jpeg" alt="Photo Print">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$90</span>
-                    <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
-                </div>
-            </div>
-
-            <div class="shop-item">
-                <img class="shop-item-image" src="64AC5BD3-6412-4157-823F-AB6E67B2B659_1_105_c.jpeg" alt="Photo Print">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$110</span>
-                    <button class="btn btn-primary shop-item-button" type="button">Add to Cart</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="main-footer">
-        <nav class="footer-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="https://www.instagram.com/matthewterra">Instagram</a></li>
-            </ul>
-        </nav>
         <h2 class="footer-title">MATTHEW TERRA</h2>
-    </footer>
+    </div>
+</footer>
+
 </body>
 </html>
