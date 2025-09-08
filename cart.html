@@ -5,50 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Cart - Matthew Terra</title>
 <link rel="stylesheet" href="styles.css">
-<script src="store.js" defer></script>
+<script src="cart.js" defer></script>
 </head>
 <body>
-
 <header class="main-header">
+    <h1 class="header-title">MATTHEW TERRA</h1>
     <nav class="nav main-nav">
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="store.html">Store</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="cart.html">Cart</a></li>
         </ul>
     </nav>
-    <h1 class="header-title">MATTHEW TERRA</h1>
 </header>
 
-<section class="container content-section">
+<section class="container content-section cart-section">
+    <h2>Your Cart</h2>
     <div class="cart-items">
         <div class="cart-row cart-titles">
-            <span class="cart-item cart-column cart-header">Shopping Cart</span>
-            <span class="cart-quantity cart-column cart-header">Quantity</span>
+            <span class="cart-item cart-column cart-header">Item</span>
+            <span class="cart-size cart-column cart-header">Size</span>
             <span class="cart-price cart-column cart-header">Price</span>
+            <span class="cart-quantity cart-column cart-header">Quantity</span>
+            <span class="cart-remove cart-column cart-header">Remove</span>
         </div>
     </div>
-
     <div class="cart-total">
-        <span class="cart-total-title">Subtotal</span>
-        <span class="cart-total-price">$0.00</span>
+        <strong>Subtotal: </strong><span class="cart-total-price">$0</span>
     </div>
-
-    <button class="btn btn-primary btn-checkout">Check Out</button>
+    <button class="btn btn-primary btn-checkout">Checkout</button>
 </section>
 
 <footer class="main-footer">
-    <div class="container main-footer-container">
-        <nav class="nav footer-nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="store.html">Store</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </nav>
-        <h2 class="footer-title">MATTHEW TERRA</h2>
-    </div>
+    <h2 class="footer-title">MATTHEW TERRA</h2>
 </footer>
-
 </body>
 </html>
